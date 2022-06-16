@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started React</title>
+    <style>
+      .header {
+        background-color: darkcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // 获取根元素作为 react 挂载的容器
+      const app = document.querySelector('#app');
+
+      // header 数据
+      const author = 'Plasticine';
+
+      // main 数据
+      const likesCount = 666;
+
+      // footer 数据
+      const partners = ['mike', 'jack', 'plasticine'];
+      const partnersFormatted = partners.map((partner) => (
+        <li key={partner}>{partner}</li>
+      ));
+      const partnerInfo = {
+        mike: '178cm',
+        jack: '180cm',
+        plasticine: '200cm',
+      };
+
+      // 创建三个 jsx 元素
+      const header = (
+        <header className="header">
+          <h1>Hello {author}</h1>
+        </header>
+      );
+
+      const main = (
+        <main style={{ backgroundColor: 'skyblue', fontSize: '24px' }}>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
+            animi, tempora tenetur eos commodi, veritatis atque qui obcaecati
+            reiciendis fugit nemo repellat architecto, impedit dolor aliquam
+            saepe illum ut nobis?
+          </p>
+          <p>likes: {likesCount}</p>
+          <p>1 + 1 = {1 + 1}</p>
+        </main>
+      );
+
+      const footer = (
+        <footer>
+          <p>Copyright 2022</p>
+          <p>{partnersFormatted}</p>
+          <p>mike: {partnerInfo.mike}</p>
+          <p>jack: {partnerInfo.jack}</p>
+          <p>plasticine: {partnerInfo.plasticine}</p>
+        </footer>
+      );
+
+      // 将三个 jsx 元素组合起来
+      const appJsx = (
+        <div>
+          {header}
+          {main}
+          {footer}
+        </div>
+      );
+
+      ReactDOM.render(appJsx, app);
+    </script>
+  </body>
+</html>
