@@ -1,3 +1,5 @@
+import reactLogoImg from './images/react_logo.png';
+
 /**
  * @description hexadecimal color generator
  * @returns random color in hex
@@ -26,4 +28,58 @@ export const Level3Case1 = () => {
   }
 
   return <section className="level3-case1-container">{colorsJsx}</section>;
+};
+
+export const Level3Case2 = () => {
+  const skills = [
+    'HTML',
+    'CSS',
+    'Sass',
+    'JS',
+    'React',
+    'Vue',
+    'Node',
+    'Python',
+    'Django',
+    'Git',
+  ];
+  const skillsJsx = [];
+
+  for (let i = 0; i < skills.length; i++) {
+    skillsJsx.push(
+      <span
+        style={{
+          backgroundColor: '#61dafb',
+          padding: '5px',
+          borderRadius: '5px',
+          minWidth: '40px',
+          textAlign: 'center',
+          userSelect: 'none',
+        }}
+      >
+        {skills[i]}
+      </span>
+    );
+  }
+
+  return (
+    <section className="level3-case2-container">
+      {/* avatar */}
+      <div
+        style={{
+          backgroundColor: '#fff',
+          height: '200px',
+          width: '200px',
+          borderRadius: '50%',
+        }}
+      >
+        <img src={reactLogoImg} alt="avatar" style={{ height: '100%' }} />
+      </div>
+      <h1>Plasticine</h1>
+      <p>Senior Developer, China</p>
+      <h1>SKILLS</h1>
+      <div style={{ display: 'flex', gap: '10px' }}>{skillsJsx}</div>
+      <p>Joined on June 17, 2022</p>
+    </section>
+  );
 };
