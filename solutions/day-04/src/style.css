@@ -16,6 +16,9 @@ body,
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   width: 80%;
 }
 
@@ -79,4 +82,12 @@ body,
   border: none;
   cursor: pointer;
   color: #fff;
+}
+
+/* level3 case1 */
+.level3-case1-container .color-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
